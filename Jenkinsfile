@@ -4,7 +4,7 @@ pipeline{
     stage('version') {
       steps {
 	  bat 'py --version'
-	  bat 'pip install Flask'
+	  bat 'pip3 install Flask'
       }
     }
     stage('hello'){
