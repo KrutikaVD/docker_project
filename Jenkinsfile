@@ -1,14 +1,14 @@
 pipeline{
-  agent { docker { image 'python:3.10.10' } }
+  agent any
   stages{
     stage('version') {
       steps {
-	  sh 'python3 --version'
+	  sh 'C:\Users\MSUSERSL123\AppData\Local\Microsoft\WindowsApps\python.exe --version'
       }
     }
     stage('hello'){
   	steps{
-	  sh 'python3 base.py'
+	  sh 'C:\Users\MSUSERSL123\AppData\Local\Microsoft\WindowsApps\python.exe base.py'
       }
     }
   }
