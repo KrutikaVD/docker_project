@@ -3,12 +3,12 @@ pipeline{
   stages{
     stage('version') {
       steps {
-	  sh 'C:\Users\MSUSERSL123\AppData\Local\Microsoft\WindowsApps\python.exe --version'
+	  sh 'python3 --version'
       }
     }
     stage('hello'){
   	steps{
-	  sh 'C:\Users\MSUSERSL123\AppData\Local\Microsoft\WindowsApps\python.exe base.py'
+	  sh 'python3 base.py'
       }
     }
   }
