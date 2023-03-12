@@ -8,9 +8,20 @@ pipeline{
 	  bat 'py -3 -mpip install flask_restful'
       }
     }
+    environment{
+	gitCredentialId = '1e079d86-3c8d-49be-a9e1-8aa21e661906'
+	gitUrl = 'https://github.com/KrutikaVD/docker_project'
+	deployBranch = 'main'
+    }
     stage('Git checkout'){
-  	steps{
-	  git 'https://github.com/KrutikaVD/docker_project'
+      steps {
+          git(
+          url: gitUrl,
+          credentialsId: gitCredentialId,
+          branch: deployBranch
+      )
+    }
+  } 
       }
     }
     stage('Build Image'){
