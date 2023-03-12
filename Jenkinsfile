@@ -1,5 +1,10 @@
 pipeline{
   agent any
+  environment {
+  gitCredentialId = '1e079d86-3c8d-49be-a9e1-8aa21e661906'
+  gitUrl = 'https://github.com/KrutikaVD/docker_project'
+  deployBranch = 'main'
+  }
   stages{
     stage('Pre-requisites') {
       steps {
@@ -7,11 +12,6 @@ pipeline{
 	  bat 'py -3 -mpip install Flask'
 	  bat 'py -3 -mpip install flask_restful'
       }
-    }
-    environment {
-	gitCredentialId = '1e079d86-3c8d-49be-a9e1-8aa21e661906'
-	gitUrl = 'https://github.com/KrutikaVD/docker_project'
-	deployBranch = 'main'
     }
     stage('Git checkout'){
       steps {
@@ -21,9 +21,7 @@ pipeline{
           branch: deployBranch
       )
     }
-  } 
-      }
-    }
+  }
     stage('Build Image'){
   	steps{
 	  bat 'docker login -u="krutikavd" -p="Krutika&7"'
