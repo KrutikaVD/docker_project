@@ -27,6 +27,7 @@ pipeline{
 	  bat 'docker login -u="krutikavd" -p="Krutika&7"'
 	  bat 'docker build -t base:0.2 .'
 	  bat 'docker run -d -p 5000:5000 base:0.2'
+	  bat 'docker commit -m "TrMy first docker jenkins" -a "KrutikaVD/docker_project" docker_jenkins krutikavd/docker_jenkins:latest'
       }
     }
   }
