@@ -21,9 +21,7 @@ pipeline{
           branch: deployBranch
       )
     }
-  } 
-      }
-    }
+  }
     stage('Build Image'){
   	steps{
 	  bat 'docker login -u="krutikavd" -p="Krutika&7"'
